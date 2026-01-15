@@ -28,6 +28,7 @@ public class TrainSchedule {
 
     @ManyToOne
     @JoinColumn(name = "train_id", nullable = false)
+    @JsonBackReference
     private Train train;
 
     @ManyToOne
