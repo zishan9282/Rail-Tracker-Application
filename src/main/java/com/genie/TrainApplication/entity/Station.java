@@ -2,9 +2,7 @@ package com.genie.TrainApplication.entity;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Schema(
         name = "Station",
@@ -12,8 +10,6 @@ import lombok.NoArgsConstructor;
 )
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Station {
 
     @Id
