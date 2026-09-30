@@ -1,24 +1,24 @@
 package com.genie.TrainApplication.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Schema(
         name = "Train Schedule",
         description = "It holds Train arrival and departure time  along with Train information and Source-Destination Station information"
 )
 @Entity
-@Data
-@NoArgsConstructor
+@Getter
+@Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class TrainSchedule {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long trainScheduleId;
 
     @Column(nullable = false)
     private String arrivalTime;
@@ -28,6 +28,7 @@ public class TrainSchedule {
 
     @ManyToOne
     @JoinColumn(name = "train_id", nullable = false)
+    @JsonBackReference
     private Train train;
 
     @ManyToOne
